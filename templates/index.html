@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💘 Luffy Puzzle Invite</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- Title -->
+  <h1>💖 🧩 Bata's Puzzle 🏴‍☠️ 💖</h1>
+  <!-- Start Button -->
+  <button id="start-btn">💘 Start Puzzle</button>
+
+  <!-- Message + Stage -->
+  <p id="message"></p>
+  <p id="stage-indicator">Stage: <span id="stage-number">1</span> / 3</p>
+
+  <!-- Puzzle Grid -->
+  <div id="puzzle-container"></div>
+
+  <!-- Envelope (Hidden Until Final Stage) -->
+  <div id="envelope-container" class="hidden">
+    <div id="envelope" onclick="openEnvelope()">
+      <div id="flap"></div>
+      <div id="note">
+        <p>💘 You did it, <span id="player-name"></span>... and my heart is doing backflips 💞</p>
+        <p>🌙 Bata... I miss you more than words can say. Can we meet soon? Just you and me? 🥺💕</p>
+        <p><em>Every day with you feels like a soft sunset wrapped in stars ✨🌸</em></p>
+      </div>
+      
+     
+    </div>
+  </div>
+
+  <!-- Sounds -->
+  <audio id="bg-music" preload="auto" loop>
+    <source src="{{ url_for('static', filename='sounds/lofi.mp3') }}" type="audio/mpeg">
+  </audio>
+  <audio id="win-sound" src="{{ url_for('static', filename='sounds/yay.mp3') }}"></audio>
+
+  <!-- Confetti & Script -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
